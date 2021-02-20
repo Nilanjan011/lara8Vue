@@ -38293,20 +38293,26 @@ var render = function() {
         "nav",
         { staticClass: "navbar navbar-expand-lg navbar-dark bg-dark" },
         [
-          _c("div", { staticClass: "collapse navbar-collapse" }, [
+          _c("div", { staticClass: "navbar-nav" }, [
             _c(
               "div",
-              { staticClass: "navbar-nav" },
+              { staticClass: "d-flex inline " },
               [
                 _c(
                   "router-link",
-                  { staticClass: "nav-item nav-link", attrs: { to: "/abc" } },
+                  {
+                    staticClass: "nav-item nav-link mr-2",
+                    attrs: { to: "/abc" }
+                  },
                   [_vm._v("Home")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
-                  { staticClass: "nav-item nav-link", attrs: { to: "/add" } },
+                  {
+                    staticClass: "nav-item nav-link mr-2",
+                    attrs: { to: "/add" }
+                  },
                   [_vm._v("Add Post")]
                 )
               ],
