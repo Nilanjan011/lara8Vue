@@ -4,10 +4,10 @@
             <span class="text-secondary">Laravel Vue CRUD Example</span>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="collapse navbar-collapse">
-                <div class="navbar-nav">
-                    <router-link to="/abc" class="nav-item nav-link">Home</router-link>
-                    <router-link to="/add" class="nav-item nav-link">Add Post</router-link>
+            <div class="navbar-nav">
+                <div class="d-flex inline">
+                    <router-link to="/abc" class="nav-item nav-link mr-2">Home</router-link>
+                    <router-link to="/add" class="nav-item nav-link mr-2">Add Post</router-link>
                 </div>
             </div>
         </nav>
