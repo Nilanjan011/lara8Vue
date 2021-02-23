@@ -1906,9 +1906,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      // post: {},
-      title: '',
-      image: ''
+      image: '',
+      title: ''
     };
   },
   methods: {
@@ -38403,7 +38402,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text" },
+                attrs: { type: "text", placeholder: "Title" },
                 domProps: { value: _vm.title },
                 on: {
                   input: function($event) {

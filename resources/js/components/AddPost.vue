@@ -6,7 +6,7 @@
                 <form @submit.prevent="addPost">
                     <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" v-model="title">
+                        <input type="text" class="form-control" placeholder="Title" v-model="title">
                         <!-- <input type="text" class="form-control" v-model="post.title"> -->
                         <!-- <span id="title"></span> -->
                     </div>
@@ -27,7 +27,8 @@
     export default {
         data() {
             return {
-                image:''
+                image:'',
+                title:''
             }
         },
         methods: {
