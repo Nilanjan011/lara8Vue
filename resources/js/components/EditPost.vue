@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 class="text-center">Edit Post</h3>
+        <h3 class="text-center" :class="{'loading':loading}">Edit Post</h3>
         <div class="row">
             <div class="col-md-6">
                 <form @submit.prevent="updatePost">
@@ -23,7 +23,8 @@
     export default {
         data() {
             return {
-                post: {}
+                post: {},
+                loading:true
             }
         },
         created() {
@@ -31,6 +32,7 @@
                 .get(`http://localhost:8000/api/post/edit/${this.$route.params.id}`)
                 .then((response) => {
                     this.post = response.data;
+                    this.loading=false;
                     // console.log(response.data);
                 });
         },

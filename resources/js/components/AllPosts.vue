@@ -2,7 +2,7 @@
     <div>
         <h3 class="text-center">All Posts</h3><br/>
 
-        <table class="table table-bordered">
+        <table class="table table-bordered" :class="{'loading':loading}">
             <thead>
             <tr>
                 <th>NO.</th>
@@ -18,13 +18,13 @@
             <tr v-for="post in posts" :key="post.id">
                 <td>{{i++}}</td>
                 <td>{{ post.title }}</td>
-                <!-- <td> <img :src="show_img(post.image)" alt="image" width="50" height="50"></td> It's work-->
-                <td> <img :src="'images/'+post.image" alt="image" width="50" height="50"></td> <!-- It's work-->
+                <td> <img :src="show_img(post.image)" alt="image" width="50" height="50"></td> <!-- It's work-->
+                <!-- <td> <img :src="'images/'+post.image" alt="image" width="50" height="50"></td> It's work-->
                 <td>{{ post.created_at }}</td>
                 <td>{{ post.updated_at }}</td>
                 <td>
                     <div class="btn-group" role="group">
-                        <router-link :to="{name: 'edit', params: { id: post.id }}" class="btn btn-primary">Edit
+                        <router-link :to="{name: 'edit', params: { id: post.id }}" class="btn btn-primary mr-1">Edit
                         </router-link>
                         <button class="btn btn-danger" @click="deletePost(post.id)">Delete</button>
                     </div>
@@ -40,6 +40,7 @@
         data() {
             return {
                 posts: [],
+                loading:true
             }
         },
         created() {
@@ -47,6 +48,7 @@
                 .get('http://localhost:8000/api/posts')
                 .then(response => {
                     this.posts = response.data;
+                    this.loading=false;
                 });
         },
         methods: {
@@ -54,7 +56,7 @@
                 return "images/"+image;
             },
             deletePost(id) {
-                if(!confirm("are you sure"))
+                if(!confirm("Are you sure ?"))
                 { 
                     return false;
                 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2021 at 11:59 AM
+-- Generation Time: Feb 23, 2021 at 08:56 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -97,10 +97,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `image`, `created_at`, `updated_at`) VALUES
-(4, 'gg', 'hghyyh', '2021-02-07 11:15:00', '2021-02-07 11:15:00'),
-(11, 'bfvdsjkvnkjd', '1612800467.jpg', '2021-02-08 10:37:47', '2021-02-08 10:37:47'),
 (12, 'bnkdjv', '1612800531.jpg', '2021-02-08 10:38:51', '2021-02-08 10:38:51'),
-(13, 'fguybygv', '1612801930.jpg', '2021-02-08 11:02:10', '2021-02-08 11:02:10');
+(13, 'fguybhhh', '1612801930.jpg', '2021-02-08 11:02:10', '2021-02-23 01:26:37'),
+(15, 'vjhbvbkbkj', '1614064945.jpg', '2021-02-23 01:52:25', '2021-02-23 01:52:25');
 
 -- --------------------------------------------------------
 
@@ -182,7 +181,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`

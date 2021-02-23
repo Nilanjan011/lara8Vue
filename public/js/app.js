@@ -1994,7 +1994,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      loading: true
     };
   },
   created: function created() {
@@ -2002,6 +2003,7 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get('http://localhost:8000/api/posts').then(function (response) {
       _this.posts = response.data;
+      _this.loading = false;
     });
   },
   methods: {
@@ -2011,7 +2013,7 @@ __webpack_require__.r(__webpack_exports__);
     deletePost: function deletePost(id) {
       var _this2 = this;
 
-      if (!confirm("are you sure")) {
+      if (!confirm("Are you sure ?")) {
         return false;
       }
 
@@ -2066,14 +2068,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      post: {}
+      post: {},
+      loading: true
     };
   },
   created: function created() {
     var _this = this;
 
     axios.get("http://localhost:8000/api/post/edit/".concat(this.$route.params.id)).then(function (response) {
-      _this.post = response.data; // console.log(response.data);
+      _this.post = response.data;
+      _this.loading = false; // console.log(response.data);
     });
   },
   methods: {
@@ -38296,7 +38300,7 @@ var render = function() {
           _c("div", { staticClass: "navbar-nav" }, [
             _c(
               "div",
-              { staticClass: "d-flex inline " },
+              { staticClass: "d-flex inline" },
               [
                 _c(
                   "router-link",
@@ -38460,71 +38464,77 @@ var render = function() {
     _c("h3", { staticClass: "text-center" }, [_vm._v("All Posts")]),
     _c("br"),
     _vm._v(" "),
-    _c("table", { staticClass: "table table-bordered" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "tbody",
-        [
-          _c("span", { attrs: { id: "i" } }, [_vm._v(_vm._s((_vm.i = 1)))]),
-          _vm._v(" "),
-          _vm._l(_vm.posts, function(post) {
-            return _c("tr", { key: post.id }, [
-              _c("td", [_vm._v(_vm._s(_vm.i++))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(post.title))]),
-              _vm._v(" "),
-              _c("td", [
-                _c("img", {
-                  attrs: {
-                    src: "images/" + post.image,
-                    alt: "image",
-                    width: "50",
-                    height: "50"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(post.created_at))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(post.updated_at))]),
-              _vm._v(" "),
-              _c("td", [
-                _c(
-                  "div",
-                  { staticClass: "btn-group", attrs: { role: "group" } },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "btn btn-primary",
-                        attrs: { to: { name: "edit", params: { id: post.id } } }
-                      },
-                      [_vm._v("Edit\n                    ")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-danger",
-                        on: {
-                          click: function($event) {
-                            return _vm.deletePost(post.id)
+    _c(
+      "table",
+      { staticClass: "table table-bordered", class: { loading: _vm.loading } },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          [
+            _c("span", { attrs: { id: "i" } }, [_vm._v(_vm._s((_vm.i = 1)))]),
+            _vm._v(" "),
+            _vm._l(_vm.posts, function(post) {
+              return _c("tr", { key: post.id }, [
+                _c("td", [_vm._v(_vm._s(_vm.i++))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(post.title))]),
+                _vm._v(" "),
+                _c("td", [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.show_img(post.image),
+                      alt: "image",
+                      width: "50",
+                      height: "50"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(post.created_at))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(post.updated_at))]),
+                _vm._v(" "),
+                _c("td", [
+                  _c(
+                    "div",
+                    { staticClass: "btn-group", attrs: { role: "group" } },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-primary mr-1",
+                          attrs: {
+                            to: { name: "edit", params: { id: post.id } }
                           }
-                        }
-                      },
-                      [_vm._v("Delete")]
-                    )
-                  ],
-                  1
-                )
+                        },
+                        [_vm._v("Edit\n                    ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-danger",
+                          on: {
+                            click: function($event) {
+                              return _vm.deletePost(post.id)
+                            }
+                          }
+                        },
+                        [_vm._v("Delete")]
+                      )
+                    ],
+                    1
+                  )
+                ])
               ])
-            ])
-          })
-        ],
-        2
-      )
-    ])
+            })
+          ],
+          2
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -38572,7 +38582,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Edit Post")]),
+    _c("h3", { staticClass: "text-center", class: { loading: _vm.loading } }, [
+      _vm._v("Edit Post")
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [

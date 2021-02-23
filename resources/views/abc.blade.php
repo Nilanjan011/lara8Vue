@@ -7,6 +7,7 @@
     <meta name="csrf-token" value="{{ csrf_token() }}"/>
     <title>ABC</title>
     <link rel="stylesheet" href=" {{mix ('css/app.css')}} ">
+    <link rel="stylesheet" href="{{asset('css/loading.css')}}">
  </head>
 <body>
     <div id="app">

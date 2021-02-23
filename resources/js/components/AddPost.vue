@@ -27,8 +27,6 @@
     export default {
         data() {
             return {
-                // post: {},
-                title:'',
                 image:''
             }
         },
