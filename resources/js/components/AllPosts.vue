@@ -18,8 +18,9 @@
             <tr v-for="post in posts" :key="post.id">
                 <td>{{i++}}</td>
                 <td>{{ post.title }}</td>
-                <td> <img :src="show_img(post.image)" alt="image" width="50" height="50"></td> <!-- It's work-->
-                <!-- <td> <img :src="'images/'+post.image" alt="image" width="50" height="50"></td> It's work-->
+                <!-- <td> <img :src="show_img(post.image)" alt="image" width="50" height="50"></td> It's work -->
+                <!-- <td> <img :src="'images/'+post.image" alt="image" width="50" height="50"></td> It's work -->
+                <td> <img :src="'storage/ava/'+post.image" alt="image" width="50" height="50"></td> <!-- laravel storage use -->
                 <td>{{ post.created_at }}</td>
                 <td>{{ post.updated_at }}</td>
                 <td>

@@ -1990,6 +1990,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -38483,7 +38484,7 @@ var render = function() {
                 _c("td", [
                   _c("img", {
                     attrs: {
-                      src: _vm.show_img(post.image),
+                      src: "storage/ava/" + post.image,
                       alt: "image",
                       width: "50",
                       height: "50"
@@ -38619,32 +38620,6 @@ var render = function() {
                       return
                     }
                     _vm.$set(_vm.post, "title", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Description")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.post.image,
-                    expression: "post.image"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text" },
-                domProps: { value: _vm.post.image },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.post, "image", $event.target.value)
                   }
                 }
               })

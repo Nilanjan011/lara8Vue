@@ -8,10 +8,10 @@
                         <label>Title</label>
                         <input type="text" class="form-control" v-model="post.title">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Description</label>
                         <input type="text" class="form-control" v-model="post.image">
-                    </div>
+                    </div> -->
                     <button type="submit" class="btn btn-primary">Update Post</button>
                 </form>
             </div>

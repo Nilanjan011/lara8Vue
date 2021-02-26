@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Post;
 
 class PostController extends Controller
@@ -24,7 +25,9 @@ class PostController extends Controller
         $image=$request->file('image');
 		$ext=$image->extension();
 		$file=time().'.'.$ext;
-		$image->move(public_path('images'),$file);
+		// $image->move(public_path('images'),$file); 
+        $image->storeAs('ava',$file,'public'); // laravel storage use 
+
         $post = new Post([
             'title' => $request->input('title'),
             'image' => $file
@@ -62,9 +65,9 @@ class PostController extends Controller
     public function delete($id)
     {
         $post = Post::find($id);
-
-        unlink(public_path('images/'.$post->image));
-
+         
+        // unlink(public_path('images/'.$post->image));
+        storage::delete("./public/ava/$post->image");  /// use Illuminate\Support\Facades\Storage; ata add korte hobe
         $post->delete();
 
         return response()->json('The post successfully deleted');
