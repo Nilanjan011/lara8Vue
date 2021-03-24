@@ -4,17 +4,17 @@ import EditPost from './components/EditPost.vue';
 
 export const routes = [
     {
-        name: 'home',
+        name: 'Home',
         path: '/abc',
         component: AllPosts
     },
     {
-        name: 'add',
+        name: 'Add',
         path: '/add',
         component: AddPost
     },
     {
-        name: 'edit',
+        name: 'Edit',
         path: '/edit/:id',
         component: EditPost
     }
