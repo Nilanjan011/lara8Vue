@@ -25,7 +25,7 @@ class PostController extends Controller
         $image=$request->file('image');
 		$ext=$image->extension();
 		$file=time().'.'.$ext;
-		// $image->move(public_path('images'),$file); 
+		// $image->move(public_path('images'),$file);
         $image->storeAs('ava',$file,'public'); // laravel storage use 
 
         $post = new Post([
