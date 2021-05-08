@@ -6,7 +6,7 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        I'm an example component.{{goo()}}{{title}}
                     </div>
                 </div>
             </div>
@@ -16,8 +16,19 @@
 
 <script>
     export default {
+        data() {
+            return {
+                title: "ssssssssssssssssssss"
+            };
+        },
+        methods: {
+        goo() {
+            return "images/";
+        }
+        },
         mounted() {
             console.log('Component mounted.')
         }
+
     }
 </script>

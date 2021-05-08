@@ -17,7 +17,7 @@
     </div>
       <script src=" {{mix('js/app.js')}} "></script>
       {{-- <script>
-          // $(document).ready(function(){C:\xampp\htdocs\laravel8\lara8Vue>
+          // $(document).ready(function(){C:\xampp\htdocs\laravel8\lara8Vue
           //   alert('bfskjfkujw');
           // });
       </script> --}}

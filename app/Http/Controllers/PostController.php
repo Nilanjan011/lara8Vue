@@ -33,7 +33,6 @@ class PostController extends Controller
             'image' => $file
         ]);
         $post->save();
-
         return response()->json('The post successfully added');
     //-------------------without image---------------------------
         // $post = new Post([

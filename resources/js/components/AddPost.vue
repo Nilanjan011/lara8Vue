@@ -48,7 +48,7 @@ export default {
         .post("./api/post/add", fd)
         .then(
           (response) => this.$router.push({ name: "Home" })
-          //console.log(response.data)
+         //console.log(response.data)
         )
         .catch((error) => {
           // if (error.response.data.errors.title[0]) {
